@@ -64,9 +64,9 @@ def index():
             user.secret_number = new_secret
             db.add(user)
             db.commit()
-            aux_wg = wrong_guess.copy()
+            new_wrong = wrong_guess.copy()
             data = {'result': True,
-                    "wrong_guess": aux_wg,
+                    "wrong_guess": new_wrong,
                     "user": user}
             wrong_guess.clear()
             response = make_response(render_template("index.html", data=data))
